@@ -75,7 +75,7 @@ When `docker-compose` completes, you should see something like this in your term
 postgres-1  | PostgreSQL init process complete; ready for start up.
 postgres-1  |
 postgres-1  | 2024-12-13 17:27:57.492 GMT [1] LOG:  starting PostgreSQL 16.5 (Debian 16.5-1.pgdg120+1) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-postgres-1  | 2024-12-13 17:27:57.492 GMT [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1  | 2024-12-13 17:27:57.492 GMT [1] LOG:  listening on IPv4 address "0.0.0.0", port 5436
 postgres-1  | 2024-12-13 17:27:57.492 GMT [1] LOG:  listening on IPv6 address "::", port 5432
 postgres-1  | 2024-12-13 17:27:57.493 GMT [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
 postgres-1  | 2024-12-13 17:27:57.495 GMT [67] LOG:  database system was shut down at 2024-12-13 17:27:57 GMT

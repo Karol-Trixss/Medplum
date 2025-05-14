@@ -103,7 +103,7 @@ export async function main(): Promise<void> {
 
   const dbClient = new Client({
     host: 'localhost',
-    port: 5432,
+    port: 5436,
     database: 'medplum',
     user: 'medplum',
     password: 'medplum',

@@ -628,7 +628,7 @@ When using a JSON config file, use JSON objects for `database` and `redis`. For 
 ```json
   "database": {
     "host": "localhost",
-    "port": 5432,
+    "port": 5436,
     "dbname": "medplum",
     "username": "medplum",
     "password": "medplum"
@@ -652,7 +652,7 @@ Example `DatabaseSecrets` value:
   "password": "password",
   "dbname": "medplum",
   "engine": "postgres",
-  "port": 5432,
+  "port": 5436,
   "host": "my-cluster.us-east-1.rds.amazonaws.com",
   "username": "clusteradmin",
   "queryTimeout": 60000
@@ -723,7 +723,7 @@ Example using JSON configuration file:
 {
   "database": {
     "host": "localhost",
-    "port": 5432,
+    "port": 5436,
     "dbname": "medplum",
     "username": "medplum",
     "password": "medplum",

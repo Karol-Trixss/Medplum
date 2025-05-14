@@ -78,9 +78,3 @@ resource "azurerm_key_vault_access_policy" "kms" {
   ]
 }
 
-resource "azurerm_role_assignment" "kms" {
-  principal_id         = azurerm_user_assigned_identity.aks_identity.principal_id
-  scope                = azurerm_key_vault.des_vault.id
-  role_definition_name = "Key Vault Contributor"
-}
-

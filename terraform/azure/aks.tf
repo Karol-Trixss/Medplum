@@ -49,19 +49,14 @@ module "medplum_aks" {
   kms_key_vault_key_id         = azurerm_key_vault_key.kms.id
   kms_key_vault_network_access = "Public"
 
-  # Connect existing app gateway 
-  brown_field_application_gateway_for_ingress = {
-    id        = azurerm_application_gateway.medplum_appgw.id
-    subnet_id = azurerm_subnet.medplum_appgw_subnet.id
-  }
+  # Disable the application gateway integration to avoid role assignment errors
 
 
+  # IMPORTANT: Remove the dependency on the role assignment
   depends_on = [
     azurerm_resource_group.rg,
-    azurerm_key_vault_access_policy.kms,
-    azurerm_role_assignment.kms
+    azurerm_key_vault_access_policy.kms
   ]
-
 }
 
 resource "azurerm_log_analytics_workspace" "main" {
@@ -79,7 +74,6 @@ resource "azurerm_log_analytics_workspace" "main" {
 }
 
 resource "azurerm_log_analytics_solution" "main" {
-
   solution_name         = "ContainerInsights"
   location              = var.location
   resource_group_name   = var.resource_group_name

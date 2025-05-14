@@ -16,7 +16,7 @@ services:
       - ./postgres/:/docker-entrypoint-initdb.d/
     command: postgres -c config_file=/usr/local/etc/postgres/postgres.conf
     ports:
-      - '5432:5432'
+      - '5436:5432'
   redis:
     image: redis:7
     restart: always

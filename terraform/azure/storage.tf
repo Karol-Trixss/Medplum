@@ -23,8 +23,3 @@ resource "azurerm_storage_container" "app_storage_container" {
   container_access_type = "private"
 }
 
-resource "azurerm_role_assignment" "server_identity_role_assignment" {
-  scope                = azurerm_storage_account.app_storage_account.id
-  role_definition_name = "Storage Blob Data Owner"
-  principal_id         = azurerm_user_assigned_identity.medplum_server_identity.principal_id
-}

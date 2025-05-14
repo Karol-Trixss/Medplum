@@ -597,7 +597,7 @@ export class BackEnd extends Construct {
     if (this.rdsProxy) {
       // Cannot call allowDefaultPortFrom(): this resource has no default port
       // See: https://repost.aws/knowledge-center/rds-proxy-connection-issues
-      this.rdsProxy.connections.allowFrom(this.fargateSecurityGroup, ec2.Port.tcp(5432));
+      this.rdsProxy.connections.allowFrom(this.fargateSecurityGroup, ec2.Port.tcp(5436));
     }
 
     // Grant Redis access to the fargate group
