@@ -83,12 +83,12 @@ resource "azurerm_cdn_frontdoor_route" "fd_route" {
 resource "azurerm_cdn_frontdoor_custom_domain" "fd_custom_domain" {
   name                     = "${azurerm_storage_account.sa.name}-domain"
   cdn_frontdoor_profile_id = azurerm_cdn_frontdoor_profile.fd_profile.id
-  host_name                = "medplum-app.azurefd.net"
+  host_name                = var.app_domain
 
-     tls {
-       certificate_type    = "ManagedCertificate"  # Change from CustomerCertificate
-       minimum_tls_version = "TLS12"
-     }
+  tls {
+    certificate_type    = "CustomerCertificate"
+    minimum_tls_version = "TLS12"
+  }
 }
 
 # resource "azurerm_cdn_frontdoor_secret" "fd_custom_secret" {

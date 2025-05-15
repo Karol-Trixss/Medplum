@@ -24,7 +24,7 @@ resource "azurerm_postgresql_flexible_server" "db" {
   backup_retention_days         = 30
   delegated_subnet_id           = azurerm_subnet.medplum_db_snet_01.id
   geo_redundant_backup_enabled  = false
-  location                      = "centralus"
+  location                      = var.location
   private_dns_zone_id           = azurerm_private_dns_zone.db.id
   public_network_access_enabled = false
   name                          = "medplum-${var.environment}-${var.deployment_id}-postgres-db"
@@ -49,7 +49,8 @@ resource "azurerm_postgresql_flexible_server" "db" {
   depends_on = [
     azurerm_resource_group.rg,
   ]
-} # <-- Add this closing brace
+
+}
 
 output "postgresql_password" {
   value     = random_password.postgresql_password.result

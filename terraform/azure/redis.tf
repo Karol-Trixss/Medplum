@@ -1,4 +1,3 @@
-
 resource "azurerm_private_dns_zone" "redis" {
   name                = "redis.private.redis.cache.azure.com"
   resource_group_name = var.resource_group_name
@@ -16,7 +15,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "redis_medplum_vnet" {
 }
 
 resource "azurerm_redis_cache" "medplum_cache" {
-  name                 = "medplum-${var.environment}-${var.deployment_id}-redis-cache"
+  name                 = var.redis_cache_name
   location             = var.location
   resource_group_name  = var.resource_group_name
   capacity             = 2

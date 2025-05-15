@@ -2,7 +2,7 @@ data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "des_vault" {
   location                      = var.location
-  name                          = "medplum-kv-des-new"
+  name                          = var.des_vault_name
   resource_group_name           = var.resource_group_name
   sku_name                      = "premium"
   tenant_id                     = data.azurerm_client_config.current.tenant_id
@@ -34,7 +34,7 @@ resource "azurerm_key_vault_access_policy" "current_user" {
 
 resource "azurerm_key_vault" "medplum_vault" {
   location                      = var.location
-  name                          = "medplum-kv-main-new"
+  name                          = var.medplum_vault_name
   resource_group_name           = var.resource_group_name
   sku_name                      = "premium"
   tenant_id                     = data.azurerm_client_config.current.tenant_id

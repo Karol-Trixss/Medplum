@@ -1,5 +1,5 @@
 variable "location" {
-  default = "eastus"
+  default = "centralus" 
 }
 
 variable "resource_group_name" {
@@ -38,4 +38,22 @@ variable "deployment_id" {
   description = "The deployment ID for the current deployment"
   type        = string
   default     = "1"
+}
+
+variable "des_vault_name" {
+  type        = string
+  description = "Name of the DES Key Vault"
+  default     = "medplum-dev-desvault-new"
+}
+
+variable "medplum_vault_name" {
+     type        = string
+     description = "Name of the Medplum Key Vault"
+  default     = "medplum-kb-kv-0722"
+   }
+
+variable "redis_cache_name" {
+  type        = string
+  description = "Name of the Redis Cache"
+  default     = "medplum-dev-1-redis-cache-new"
 }
